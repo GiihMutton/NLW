@@ -1,0 +1,172 @@
+#page-create-point {
+    /*posição em relação a página*/
+    width: 90%;
+    max-width: 1100px;
+    /*alinhamento da caixa pelo lado de fora*/
+    margin: 0 auto;
+}
+    
+    
+#page-create-point header {
+    /*posição das caixas de texto - superior*/
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#page-create-point header a { 
+    /*propriedades da font - cor, peso, posição etc*/
+    color: var(--title-color);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+#page-create-point header a span {
+    /*configurações do ícone usado*/
+    background-image: url('../extras-aula-1/icones/arrow-left.svg');
+    margin-right: 16px ;
+    display: flex;
+    width: 20px;
+    height: 24px;
+
+}
+
+form {
+    /*preenchimento da caixa de texto*/
+    background-color: white;
+    
+    margin: 80px auto;
+    
+    /*tamanho da caixa de preenchimento*/
+    padding: 64px;
+    
+    border-radius: 8px;
+    max-width: 730px;
+    
+}
+
+form h1 { /*título do formulário "Cadastro do ponto de coleta*/
+    font-size: 36px;
+
+}
+
+form fieldset { /*bloco dos campos a sereem preenchidos*/
+    margin-top: 64px;
+    border: 0;
+}
+
+form legend { /* posição do titulo do bloco de campos*/
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+form legend h2 { /*propriedades de "dados da entidade"*/
+    font-size: 24px;
+    
+}
+form legend span {
+    color: var(--title-color);
+    font-size: 14px;
+}
+
+form .field { /*posição das caixas dos campos*/
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin-bottom: 24px; /*distancia entre os campos*/
+}
+
+form .field-group {
+    display: flex;
+}
+
+form input, /*vai aplicar algumas propriedades para os form select*/
+form select { 
+    background-color: #f0f0f5;
+    border: 0;
+    padding: 16px 24px;
+    font-size: 16px;
+    border-radius: 8px; /*borda da caixa*/
+    outline: none; /*demonstração de que o campo foi selecionado*/
+}
+
+form select {
+    -webkit-appearance: none; /*adaptação pra nagevadores diferentes*/
+    -moz-appearance: none;
+    appearance: none;
+}
+
+form label { /*titulo de cada campo*/
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+form .field-group .field + .field { /*se refere ao segundo field, que no caso é o campo do lado direito*/
+    margin-left: 24px;
+}
+
+form button {
+    width: 260px;
+    height: 56px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: 0;
+    margin-top: 40px;
+    transition: background-color 400ms;
+}
+
+form button:hover {/*quando passar o mouse pelo botão*/
+    background-color: #2fb86e;
+}
+
+.items-grid {
+    display: grid; /*vai criar uma grade ao inves de deixar em linha ou coluna*/
+    grid-template-columns: 1fr 1fr 1fr; /*defini que são 3 colunas fracionadas. Ele vai ajustar as 3 no espaço disponível*/
+    gap: 16px; /*propriedade do grid pra fazer as margens da grade*/
+}
+
+.items-grid li {
+    background-color: #e1faec;
+    list-style: none;
+
+    border: 2px solid #e1faec;
+    border-radius: 8px;
+    height: 180px;
+    padding: 32px 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+
+    cursor: pointer; /*muda o cursor pra uma mãozinha quando for selecionar o item*/
+
+}
+
+.items-grid li span {
+    margin-top: 12px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    color: var(--title-color);
+
+}
+
+.items-grid li.selected { /*vai mudar a estética do botão quando ele for selecionado*/
+    background: #e1faec;
+    border: 2px solid #34cb79;
+}
+
+.items-grid li img,
+.items-grid li span {
+    pointer-events: none; /*O evento de click não vai diferenciar imagem de texto*/
+}
