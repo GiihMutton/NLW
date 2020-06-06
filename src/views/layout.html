@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+    <!-- linguagem da página em portugues br-->
+    <head>
+        <!--configurações especiais da página-->
+        <meta charset="UTF-8">
+        <!--configura metas do site ESSE ACEITA CARAC ESPECIAIS-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--FAZ O SITE CABER EM DIVERSOS TAMANHO DE TELA-->
+
+        {% block title %}
+            <title>Ecoleta</title>
+            <!--titulo da minha página-->
+        {% endblock title %}
+
+        <!-- estilizar texto USAR TAG QUE VAI PUXAR FONTE DE ALGUM LUGAR-->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/styles/main.css">
+
+        {% block styles %}{% endblock styles %}
+
+        <link rel="stylesheet" href="/styles/responsive.css">
+
+    </head>
+    <body>
+
+        <div id="{{ pageId }}">
+            {% block content %}{% endblock content %}
+        </div>
+
+        {% block modal %}{% endblock modal %}
+
+        {% block scripts %}{% endblock scripts %}
+
+    </body>
+</html>
